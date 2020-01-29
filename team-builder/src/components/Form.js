@@ -25,9 +25,9 @@ const Form = ({ memberToEdit, handleEdit }) => {
       }
       ,
     {
-        firstName: "Amin",
-        lastName: "Hasan",
-        email: "ah@gmail.com",
+        firstName: "Zak",
+        lastName: "Touzri",
+        email: "z@gmail.com",
         role: "Lambda Student"
       },
       {
@@ -35,17 +35,20 @@ const Form = ({ memberToEdit, handleEdit }) => {
           lastName: "Lynch",
           email: "el@gmail.com",
           role: "Lambda Student"
-        }, {
-            firstName: "Eoin",
-            lastName: "Lynch",
-            email: "el@gmail.com",
+        }  ,
+        {
+            firstName: "Austin",
+            lastName: "Walela",
+            email: "aw@gmail.com",
             role: "Lambda Student"
-          }, {
-            firstName: "Eoin",
-            lastName: "Lynch",
-            email: "el@gmail.com",
-            role: "Lambda Student"
-          }
+          },
+          ,
+          {
+              firstName: "Kolade",
+              lastName: "Junaid",
+              email: "kj@gmail.com",
+              role: "Lambda Student"
+            },
   ]);
 
   function handleChange(e) {
