@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TeamMembers from "./TeamMembers";
 
-const Form = () => {
+const Form = ({ memberToEdit, handleEdit }) => {
+  console.log(memberToEdit);
   const [newTeamMember, setNewTeamMember] = useState({
     firstName: "",
     lastName: "",
@@ -25,15 +26,17 @@ const Form = () => {
     e.preventDefault();
     e.persist();
     console.log(e);
-    const initialState = {
+
+    setTeamMembers(teamMembers => [...teamMembers, newTeamMember]);
+    console.log(teamMembers);
+    setNewTeamMember({
       firstName: "",
       lastName: "",
       email: "",
       role: ""
-    };
-    setTeamMembers(teamMembers => [...teamMembers, newTeamMember]);
-    console.log(teamMembers);
-    //   setNewTeamMember(initialState);
+    }
+    
+    );
   }
 
   return (
@@ -48,6 +51,7 @@ const Form = () => {
             id="teamMember_firstName"
             placeholder="first name"
             onChange={handleChange}
+            value={newTeamMember.firstName}
           />
           <br />
           <label htmlFor="teamMember_lastName">Last name </label>
@@ -57,6 +61,7 @@ const Form = () => {
             id="teamMember_lastName"
             placeholder="last name"
             onChange={handleChange}
+            value={newTeamMember.lastName}
           />
           <br />
           <label htmlFor="teamMember_email">Work email</label>
@@ -66,6 +71,7 @@ const Form = () => {
             id="teamMember_email"
             placeholder="email"
             onChange={handleChange}
+            value={newTeamMember.email}
           />
           <br />
           <label htmlFor="teamMember_role">Team role </label>
@@ -75,12 +81,17 @@ const Form = () => {
             id="teamMember_role"
             placeholder="team role"
             onChange={handleChange}
+            value={newTeamMember.role}
           />
           <br />
           <button type="submit">Submit</button>
         </form>
       </div>
-      <TeamMembers teamMembers={teamMembers} />
+      <TeamMembers
+        teamMembers={teamMembers}
+        handleEdit={handleEdit}
+        memberToEdit={memberToEdit}
+      />
     </StyledDiv>
   );
 };
