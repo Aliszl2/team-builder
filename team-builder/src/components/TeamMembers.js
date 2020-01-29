@@ -5,7 +5,16 @@ const TeamMembers = props => {
   console.log(props);
   return (
     <div>
-    <h1>Team Members</h1>
+      {props.teamMembers.map(person => {
+        return (
+          <div>
+            <h3>
+              NAME: {person.firstName} {person.lastName} EMAIL:{person.email}{" "}
+              ROLE:{person.role}
+            </h3>
+          </div>
+        );
+      })}
     </div>
   );
 };
