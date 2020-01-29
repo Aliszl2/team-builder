@@ -125,6 +125,7 @@ const Form = ({ memberToEdit, handleEdit }) => {
         </form>
       </div>
       <TeamMembers
+     
         teamMembers={teamMembers}
         handleEdit={handleEdit}
         memberToEdit={memberToEdit}
@@ -137,11 +138,12 @@ export default Form;
 
 const StyledDiv = styled.div`
   div {
-    border: 5px black solid;
+    border: 1px black solid;
     width: 700px;
     margin: 0 auto;
     form {
       margin: 50px;
     }
+   
   }
 `;

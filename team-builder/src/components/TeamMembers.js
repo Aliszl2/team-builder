@@ -11,13 +11,13 @@ const TeamMembers = props => {
     <div>
       {props.teamMembers.map(person => {
         return (
-          <div>
+          <StyledDiv>
             <h3>
               NAME: {person.firstName} {person.lastName} <br/> <br/>  ROLE:  {person.role} <br/> <br/>    eMail:  {person.email}{" "}
              
             </h3>
             <button onClick={props.handleEdit} >Edit</button>
-          </div>
+          </StyledDiv>
         );
       })}
     </div>
@@ -25,3 +25,12 @@ const TeamMembers = props => {
 };
 
 export default TeamMembers;
+
+const StyledDiv = styled.div`
+  div {
+    border: 1px red solid;
+    width: 30%;
+  
+ 
+  }
+`;
