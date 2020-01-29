@@ -10,7 +10,43 @@ const Form = ({ memberToEdit, handleEdit }) => {
     email: "",
     role: ""
   });
-  const [teamMembers, setTeamMembers] = useState([]);
+  const [teamMembers, setTeamMembers] = useState([
+    {
+      firstName: "Nabeelah",
+      lastName: "Yousuf",
+      email: "NL@gmail.com",
+      role: "Team Lead"
+    },
+    {
+        firstName: "Amin",
+        lastName: "Hasan",
+        email: "ah@gmail.com",
+        role: "Lambda Student"
+      }
+      ,
+    {
+        firstName: "Amin",
+        lastName: "Hasan",
+        email: "ah@gmail.com",
+        role: "Lambda Student"
+      },
+      {
+          firstName: "Eoin",
+          lastName: "Lynch",
+          email: "el@gmail.com",
+          role: "Lambda Student"
+        }, {
+            firstName: "Eoin",
+            lastName: "Lynch",
+            email: "el@gmail.com",
+            role: "Lambda Student"
+          }, {
+            firstName: "Eoin",
+            lastName: "Lynch",
+            email: "el@gmail.com",
+            role: "Lambda Student"
+          }
+  ]);
 
   function handleChange(e) {
     //   console.log(e.target.name);
@@ -34,9 +70,7 @@ const Form = ({ memberToEdit, handleEdit }) => {
       lastName: "",
       email: "",
       role: ""
-    }
-    
-    );
+    });
   }
 
   return (
