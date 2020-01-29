@@ -7,37 +7,34 @@ const Form = () => {
     firstName: "",
     lastName: "",
     email: "",
-    role:""
-
+    role: ""
   });
   const [teamMembers, setTeamMembers] = useState([]);
 
-  function handleChange(e){
-      console.log(e.target.name);
-      console.log(e.target.value);
+  function handleChange(e) {
+    //   console.log(e.target.name);
+    //   console.log(e.target.value);
     setNewTeamMember({
-        ...newTeamMember,
-        [e.target.name]:e.target.value
-    })
+      ...newTeamMember,
+      [e.target.name]: e.target.value
+    });
     console.log(newTeamMember);
-}
+  }
 
-
-function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     e.persist();
     console.log(e);
-    const initialState={
-        firstName: "",
-        lastName: "",
-        email: "",
-        role:""
-      }
-      setTeamMembers(teamMembers.concat(newTeamMember))
-      console.log(teamMembers);
+    const initialState = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      role: ""
+    };
+    setTeamMembers(teamMembers => [...teamMembers, newTeamMember]);
+    console.log(teamMembers);
     //   setNewTeamMember(initialState);
-
-}
+  }
 
   return (
     <StyledDiv>
@@ -78,11 +75,12 @@ function handleSubmit(e) {
             id="teamMember_role"
             placeholder="team role"
             onChange={handleChange}
-          /><br/>
-        <button type="submit">Submit</button>
+          />
+          <br />
+          <button type="submit">Submit</button>
         </form>
       </div>
-      <TeamMembers teamMembers={teamMembers}/>
+      <TeamMembers teamMembers={teamMembers} />
     </StyledDiv>
   );
 };
